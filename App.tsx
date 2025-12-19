@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Sidebar from './components/Sidebar';
-import DashboardHome from './components/DashboardHome';
-import GreenMonitor from './components/GreenMonitor';
-import CostEngine from './components/CostEngine';
-import Inventory from './components/Inventory';
-import Settings from './components/Settings';
-import LandingPage from './components/LandingPage';
-import { Tab } from './types';
-import { COLORS } from './constants';
+import Sidebar from './components/Sidebar.tsx';
+import DashboardHome from './components/DashboardHome.tsx';
+import GreenMonitor from './components/GreenMonitor.tsx';
+import CostEngine from './components/CostEngine.tsx';
+import Inventory from './components/Inventory.tsx';
+import Settings from './components/Settings.tsx';
+import LandingPage from './components/LandingPage.tsx';
+import { Tab } from './types.ts';
+import { COLORS } from './constants.ts';
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -45,14 +45,11 @@ const App: React.FC = () => {
 
   return (
     <div className="flex min-h-screen font-sans text-slate-300 animate-fade-in" style={{ backgroundColor: COLORS.bg }}>
-      {/* Sidebar */}
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} onLogout={handleLogout} />
 
-      {/* Main Content Area */}
       <div className="flex-1 ml-64 flex flex-col min-w-0">
-        {/* Top Header */}
         <header className="h-16 border-b border-slate-700 flex items-center justify-between px-8 sticky top-0 z-20 backdrop-blur-md bg-[#0A192F]/80">
-           <div className="text-sm breadcrumbs text-slate-500 overflow-hidden whitespace-nowrap">
+           <div className="text-sm text-slate-500 overflow-hidden whitespace-nowrap">
               SmartE-Logistics / <span className="text-white font-medium capitalize">{activeTab.toLowerCase().replace('_', ' ')}</span>
            </div>
            <div className="flex items-center space-x-4 shrink-0">
@@ -66,14 +63,12 @@ const App: React.FC = () => {
            </div>
         </header>
 
-        {/* Dynamic Content */}
         <main className="flex-1 p-8 overflow-y-auto">
           {renderContent()}
         </main>
 
-        {/* Footer */}
-        <footer className="h-12 border-t border-slate-800 flex items-center justify-center text-xs text-slate-600">
-           SmartE-Logistics Dashboard v1.0 | Developed by Group 02 From UTE - Project E-Logistics 2025.
+        <footer className="h-12 border-t border-slate-800 flex items-center justify-center text-[10px] text-slate-600 px-4 text-center">
+           © 2025 SmartE-Logistics Dashboard | Developed by Group 02 From UTE - Project E-Logistics.
         </footer>
       </div>
     </div>

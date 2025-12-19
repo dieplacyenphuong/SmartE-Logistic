@@ -1,7 +1,7 @@
 import React from 'react';
 import { LayoutDashboard, Leaf, Calculator, Package, Settings, LogOut } from 'lucide-react';
-import { COLORS } from '../constants';
-import { Tab } from '../types';
+import { COLORS } from '../constants.ts';
+import { Tab } from '../types.ts';
 
 interface SidebarProps {
   activeTab: Tab;
